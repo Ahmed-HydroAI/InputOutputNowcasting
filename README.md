@@ -35,6 +35,10 @@ In total, 24 input–output configurations are tested to identify the optimal se
 ├── environment.yml          # conda environment  
 └── README.md                # Project documentation  
 
+# 📦 Pretrained Models
+Pretrained weights for the models used in the study are available on Zenodo:
+
+https://zenodo.org/records/15863528?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6Ijg1NTZlMGFkLTQxZWQtNDQ4OC1iMTU5LWNhZTU3MWY5YjEwYiIsImRhdGEiOnt9LCJyYW5kb20iOiIyNmE3YTI1ZGQxMTFmZTIxNTMzYTg3ZDFjODllZmJkOCJ9.DbScpvg77FKPN8dH0os9S8V9m0e3bgN9CgUeNpigxXYcYAGn7E7eDDdns8cRZtOW4zhPV4mZpsKZjl75PLMqoA
 
 #  💻 Setup & Requirements
 
