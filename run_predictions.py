@@ -21,7 +21,7 @@ from utils import (
 # ------------------------
 
 # define the data directory
-data_dir = "/home/sv20953/PHD/2020"
+data_dir = ""
 
 # 1  → Each model predicts 1 frame recursively for a total of 12 frames
 # 6  → Each model predicts 6 frames, then recursively predicts the remaining 6
@@ -29,10 +29,10 @@ data_dir = "/home/sv20953/PHD/2020"
 n_output_frames = 1  # Choose from 1, 6, or 12
 
 # directory to model weights
-checkpoint_dir = f"/home/sv20953/github/checkpoints/models_{n_output_frames}out"
+checkpoint_dir = ""
 
 #directory to save outputs such as plots and metrics results
-output_dir = "/home/sv20953/github/outputs"
+output_dir = ""
 os.makedirs(output_dir, exist_ok=True)
 
 # select the requires input configuration
