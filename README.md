@@ -1,48 +1,58 @@
-🌧️ Input–Output Nowcasting Evaluation
+# 🌧️ Optimizing Input-Output Configurations for Deep Learning-Based Rainfall Nowcasting
 
 This repository provides code for the paper:
 
-\*\*"An Explainable Framework for Optimizing Input–Output Configuration in Deep Learning-Based Rainfall Nowcasting"\*\*
+**"An Explainable Framework for Optimizing Input–Output Configuration in Deep Learning-Based Rainfall Nowcasting"**
 
-It evaluates rainfall nowcasting models with varying input–output configurations using deep learning, focusing on explainability and performance under different temporal settings.
+This study evaluates deep learning-based rainfall nowcasting models under varying input–output configurations, focusing on explainability and performance across different temporal settings.
 
+A unified encoder–decoder architecture inspired by U-Net is used. The model is trained, validated, and evaluated on five years (2016–2020) of UK radar data at 5-minute intervals and 1 km resolution, with a spatial grid size of 512 × 512.
+
+![U-Net Architecture](assets/model_architecture.png)
+
+The model supports multiple input–output configurations:
+
+- **Input configurations**: 2, 3, 4, 6, 8, 10, 12, and 24 past rainfall frames.
+- **Output modes**:
+  - **1-frame output**: Predict 1 frame at a time recursively (12 steps).
+  - **6-frame output**: Predict the first 6 frames in one step, then 6 more recursively.
+  - **12-frame output**: Predict all 12 future frames in one forward pass.
+
+In total, 24 input–output configurations are tested to identify the optimal setup for deep learning-based rainfall nowcasting.
 ---
+📄 See below for instructions on running the models. For further details, please refer to the paper or contact the author.
 
-📁 Project Structure
+#  📁 Project Structure
 
-\- `run\_predictions.py` – Main evaluation script  
+├── run_predictions.py       # Main evaluation script  
+├── utils.py                 # Utilities for loading, scaling, plotting, inference  
+├── metrics/                 # MAE, RMSE, CSI metric functions  
+├── nowcast_unet/            # U-Net-based 2D CNN model  
+├── checkpoints/             # Pretrained weights by input configuration  
+├── sample_data/             # Sample radar sequences  
+├── sequence_builder.py      # Builds radar input/output sequences  
+├── requirements.txt         # pip environment  
+├── environment.yml          # conda environment  
+└── README.md                # Project documentation  
 
-\- `utils.py` – Utilities for data loading, scaling, plotting, and model inference  
 
-\- `metrics/` – Contains MAE, RMSE, and CSI metric functions  
-
-\- `nowcast\_unet/` – U-Net-based model architecture (2D CNN)  
-
-\- `checkpoints/` – Pretrained model weights organized by input configuration  
-
-\- `sample\_data/` – Example radar sequences for testing  
-
-\- `sequence\_builder.py` – Functions for building radar input/output sequences  
-
-\- `README.md` – Project documentation
----
-
-💻 Setup & Requirements
+#  💻 Setup & Requirements
 
 1. **Clone the repository**:
-   ```bash
+     
    git clone https://github.com/HydroAI/InputOutputNowcasting.git
    cd InputOutputNowcasting
 
-2. Install required  packages:
+3. Install required  packages:
 
 You can use either pip or conda:
+
 🔹 Option A – Using pip
-bash
+
 pip install -r requirements.txt
 
 🔹 Option B – Using conda (recommended for reproducibility)
-bash
+
 conda env create -f environment.yml
 conda activate nowcast-env
 
@@ -57,24 +67,17 @@ For example:
 
 > 🔎 Note: The code is already included via the cloned repository.
 
-bash
-pip install -r requirements.txt
 
-3. Prepare model checkpoints:
-Download or copy pretrained model weights into checkpoints/{N}in/weights-best.pth for each input configuration (e.g., 2in, 3in, etc.).
+#  🚀 Usage
 
-🚀 Usage
-
-\### 1. Run the evaluation script
-
-```bash
+1. Run the evaluation script
 
 python run\_predictions.py
 
 This runs inference and evaluation on the radar sequences for all selected models and saves outputs to the outputs/ folder.
 
 
-⚙️ Input–Output Configuration
+#  ⚙️ Input–Output Configuration
 Inside run_predictions.py, configure:
 
 Input frame settings using model_config:
@@ -93,7 +96,7 @@ Where:
 6 → Predict 6 frames + recursively predict next 6
 12 → Full 12-frame prediction in one forward pass
 
-📊 Outputs and Visualization
+#  📊 Outputs and Visualization
 
 The script generates:
 
@@ -105,11 +108,11 @@ The script generates:
 All outputs are saved to the outputs/ directory.
 
 
-📄 License
+#  📄 License
 
 This project is open-source under the MIT License. See LICENSE for details.
 
-📬 Contact
+#  📬 Contact
 
 For questions or collaborations, contact:
 
