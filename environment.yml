@@ -1,0 +1,16 @@
+name: nowcasting-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - torch
+  - torchvision
+  - matplotlib
+  - imageio
+  - cartopy
+  - tqdm
+  - pip
+  - pip:
+      - imageio[ffmpeg]  # Ensures GIF/animation support
