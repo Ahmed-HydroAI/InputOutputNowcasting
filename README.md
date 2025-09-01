@@ -36,9 +36,9 @@ In total, 24 input–output configurations are tested to identify the optimal se
 └── README.md                # Project documentation  
 
 # 📦 Pretrained Models
-Pretrained weights for the models used in the study are available on Zenodo:
 
-https://zenodo.org/records/15863528
+Pretrained weights for the models used in this study are archived on Zenodo:  
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15863528.svg)](https://doi.org/10.5281/zenodo.15863528)
 
 #  💻 Setup & Requirements
 
