@@ -126,7 +126,7 @@ University of Bristol
 
 ✉️ ahmed.abdelhalim@bristol.ac.uk
 
-✉️ ahmed\_abdelhalim@mu.edu.eg
+✉️ ahmed_abdelhalim@mu.edu.eg
 
 🔗 https://github.com/Ahmed-HydroAI
 
