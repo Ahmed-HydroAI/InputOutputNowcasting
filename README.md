@@ -43,8 +43,8 @@ Pretrained weights for the models used in this study are archived on Zenodo:
 
 1. **Clone the repository**:
      
-   git clone https://github.com/HydroAI/InputOutputNowcasting.git
-   cd InputOutputNowcasting
+   git clone https://github.com/HydroAI/TemporalConditioningNowcasting.git
+   cd TemporalConditioningNowcasting
 
 3. Install required  packages:
 
@@ -96,8 +96,8 @@ n_output_frames = 1  # Options: 1, 6, or 12
 Where:
 
 1 → Recursive prediction (1 frame at a time, 12 steps)
-6 → Predict 6 frames + recursively predict next 6
-12 → Full 12-frame prediction in one forward pass
+6 → Hybrid prediction (Predict 6 frames + recursively predict next 6)
+12 → Direct multistep prediction (Full 12-frame prediction in one forward pass)
 
 #  📊 Outputs and Visualization
 
