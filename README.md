@@ -1,27 +1,26 @@
-# 🌧️ Optimizing Input-Output Configurations for Deep Learning-Based Rainfall Nowcasting
+🌧️ Temporal Conditioning in Deep-Learning Radar Rainfall Nowcasting
 
 This repository provides code for the paper:
 
-**"An Explainable Framework for Optimizing Input–Output Configuration in Deep Learning-Based Rainfall Nowcasting"**
+“Diagnosing Temporal Conditioning in Deep-Learning Radar Rainfall Nowcasting: An Explainable, Regime-Aware Framework”
 
-This study evaluates deep learning-based rainfall nowcasting models under varying input–output configurations, focusing on explainability and performance across different temporal settings.
+This study presents a reproducible framework for diagnosing temporal conditioning in deep-learning radar rainfall nowcasting. The framework evaluates how input-history length and forecasting strategy affect forecast skill, effective temporal memory, temporal redundancy, robustness across rainfall regimes, and computational efficiency.
 
-A unified encoder–decoder architecture inspired by U-Net is used. The model is trained, validated, and evaluated on five years (2016–2020) of UK radar data at 5-minute intervals and 1 km resolution, with a spatial grid size of 512 × 512.
+A reference encoder–decoder architecture inspired by U-Net is trained, validated, and evaluated on five years (2016–2020) of UK radar rainfall data at 5-minute temporal resolution and 1 km spatial resolution, using a 512 × 512 spatial grid.
 
-![U-Net Architecture](assets/model_architecture.png)
+The framework supports multiple temporal-conditioning configurations:
 
-The model supports multiple input–output configurations:
+* Input-history lengths: 2, 3, 4, 6, 8, 10, 12, and 24 past rainfall frames.
+* Forecasting strategies:
+    * 1-output recursive: Predict one future frame at a time and recursively roll out to 12 steps.
+    * 6-output hybrid: Predict the first 6 future frames directly and recursively generate the remaining 6 frames.
+    * 12-output direct: Predict all 12 future frames in a single forward pass.
 
-- **Input configurations**: 2, 3, 4, 6, 8, 10, 12, and 24 past rainfall frames.
-- **Output modes**:
-  - **1-frame output**: Predict 1 frame at a time recursively (12 steps).
-  - **6-frame output**: Predict the first 6 frames in one step, then 6 more recursively.
-  - **12-frame output**: Predict all 12 future frames in one forward pass.
+In total, 24 temporal-conditioning configurations are evaluated to diagnose how temporal design influences nowcasting performance, interpretability, and computational cost.
 
-In total, 24 input–output configurations are tested to identify the optimal setup for deep learning-based rainfall nowcasting.
----
-📄 See below for instructions on running the models. For further details, please refer to the paper or contact the author.
+⸻
 
+📄 See below for instructions on running the models. For further details, please refer to the paper or contact the corresponding author.
 #  📁 Project Structure
 
 ├── run_predictions.py       # Main evaluation script  
